@@ -1,3 +1,4 @@
+import { PrintTable } from "@/app/components/PrintTable";
 import { Table } from "@/components/organism/Table";
 import { filterDocumentUseCase } from "@/modules/Documentos/usecases/filterDocumentUseCase";
 
@@ -21,5 +22,9 @@ export const DocumentosTable = async ({
     return null;
   }
 
-  return <Table heads={heads} rows={data.documentos} />;
+  return (
+    <>
+      <PrintTable heads={heads} rows={data.documentos} />
+    </>
+  );
 };

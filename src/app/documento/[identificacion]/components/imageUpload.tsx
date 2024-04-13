@@ -11,7 +11,7 @@ export const ImageUpload = ({ documento }: { documento: IDocumentos }) => {
   const router = useRouter();
   const fileInputRef = useRef<any>(null);
 
-  const { mutate, isLoading, isError, isSuccess } = useMutation(
+  const { mutate, isLoading } = useMutation(
     async ({ documento, imageFile }: { documento: IDocumentos; imageFile: File }) => {
       return createImageUseCase({ documento, imageFile });
     },
